@@ -7,5 +7,8 @@
     <h1>{{ post.title }}</h1>
     <strong> By: {{ post.author }} | Posted on: {{ post.created_on }}</strong>
     <p>{{ post.body }}</p>
-
+    {% if user.is_authenticated %}
+        <p><a href="{% url 'post_edit' post.id %}" class="btn btn-secondary">Edit</a></p>
+        <p><a href="{% url 'post_delete' post.id %}" class="btn btn-secondary">Delete</a></p>
+    {% endif %}
 {% endblock content %}

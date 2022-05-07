@@ -4,7 +4,7 @@ from django.urls import reverse
 
 
 class Post(models.Model):
-    title = models.CharField(max_length=256) #defining our first column
+    title = models.CharField(max_length=256) 
     author = models.ForeignKey(
         'auth.User',
         on_delete=models.CASCADE,
